@@ -184,6 +184,6 @@ public class StatisticsController {
    CSS ada di static/ karena merupakan file statis.
 3. th:replace mengganti seluruh tag dengan fragment.
    th:insert hanya memasukkan isi fragment ke dalam tag.
-4. @{} digunakan agar URL menyesuaikan context path aplikasi dan lebih fleksibel saat deploy.
-   5. Jika Controller langsung membuat new ProductService(), maka akan terjadi tight coupling, sulit untuk testing, dan 
+4. @{} digunakan agar URL menyesuaikan context path aplikasi dan lebih fleksibel saat deploy. 
+5. Jika Controller langsung membuat new ProductService(), maka akan terjadi tight coupling, sulit untuk testing, dan 
    tidak mengikuti prinsip Dependency Injection.
