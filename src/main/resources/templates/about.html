@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>About</title>
+</head>
+<body>
+<h1 th:text="${appName}"></h1>
+<p>Version: <span th:text="${version}"></span></p>
+<p>Author: <span th:text="${author}"></span></p>
+
+<h3>Technologies:</h3>
+<ul>
+    <li th:each="tech : ${technologies}"
+        th:text="${tech}"></li>
+</ul>
+
+<a th:href="@{/}">Home</a>
+</body>
+</html>

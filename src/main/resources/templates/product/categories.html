@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Kategori Produk</title>
+</head>
+<body>
+
+<h1>Daftar Kategori</h1>
+
+<ul>
+    <li th:each="cat : ${categories}">
+        <a th:href="@{'/products/category/' + ${cat}}">
+            <span th:text="${cat}"></span>
+        </a>
+    </li>
+</ul>
+
+<a th:href="@{/products}">Kembali ke Daftar Produk</a>
+
+</body>
+</html>
