@@ -1,21 +1,45 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kategori Produk</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-gray-50">
 
-<h1>Daftar Kategori</h1>
+<!-- Navbar akan di-include di sini -->
+<div th:replace="~{fragments/navbar :: navbar}"></div>
 
-<ul>
-    <li th:each="cat : ${categories}">
-        <a th:href="@{'/products/category/' + ${cat}}">
-            <span th:text="${cat}"></span>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="bg-white rounded-lg shadow-md p-6">
+        <h1 class="text-2xl font-bold text-gray-800 mb-6">Daftar Kategori</h1>
+
+        <ul class="space-y-2 mb-8">
+            <li th:each="cat : ${categories}"
+                class="border-b border-gray-100 last:border-0 py-2">
+                <a th:href="@{'/products/category/' + ${cat}}"
+                   class="text-blue-600 hover:text-blue-800 hover:underline flex items-center">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                    <span th:text="${cat}" class="text-lg"></span>
+                </a>
+            </li>
+        </ul>
+
+        <a th:href="@{/products}"
+           class="inline-flex items-center px-4 py-2 bg-gray-600 text-white rounded-md hover:bg-gray-700 transition-colors duration-200">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+            </svg>
+            Kembali ke Daftar Produk
         </a>
-    </li>
-</ul>
+    </div>
+</main>
 
-<a th:href="@{/products}">Kembali ke Daftar Produk</a>
+<!-- Footer akan di-include di sini -->
+<div th:replace="~{fragments/footer :: footer}"></div>
 
 </body>
 </html>

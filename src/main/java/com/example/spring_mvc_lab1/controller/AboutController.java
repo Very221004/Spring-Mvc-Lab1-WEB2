@@ -13,7 +13,7 @@ public class AboutController {
     public String about(Model model) {
         model.addAttribute("appName", "Spring MVC Lab");
         model.addAttribute("version", "1.0");
-        model.addAttribute("author", "Very Tampubolon");
+        model.addAttribute("author", "Very Tampubolon ");
         model.addAttribute("technologies",
                 List.of("Spring Boot", "Thymeleaf", "Bootstrap", "Java 25"));
 

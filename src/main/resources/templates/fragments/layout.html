@@ -2,24 +2,31 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <!-- Fragment: Navbar -->
-<a class="nav-link" th:href="@{/statistics}">Statistik</a>
-<nav th:fragment="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-        <a class="navbar-brand" th:href="@{/}">Spring MVC Lab</a>
-        <div class="navbar-nav">
-            <a class="nav-link" th:href="@{/}">Home</a>
-            <a class="nav-link" th:href="@{/products}">Produk</a>
-            <a class="nav-link" th:href="@{/about}">About</a>
+<nav th:fragment="navbar" class="bg-gray-900 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <div class="flex items-center">
+                <a class="text-white font-bold text-xl" th:href="@{/}">Spring MVC Lab</a>
+                <div class="ml-10 flex items-baseline space-x-4">
+                    <a class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200" th:href="@{/}">Home</a>
+                    <a class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200" th:href="@{/products}">Produk</a>
+                    <a class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200" th:href="@{/about}">About</a>
+                    <!-- Link Statistik dipindahkan ke dalam menu -->
+                    <a class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200" th:href="@{/statistics}">Statistik</a>
+                </div>
+            </div>
         </div>
     </div>
 </nav>
 
 <!-- Fragment: Footer -->
-<footer th:fragment="footer" class="bg-light text-center py-3 mt-5">
-    <div class="container">
-        <p class="text-muted mb-0">
-            Spring MVC Lab &copy; 2026 | WEB-202 Week 4
-        </p>
+<footer th:fragment="footer" class="bg-gray-100 py-6 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <p class="text-gray-500 text-sm">
+                Spring MVC Lab &copy; 2026 | WEB-2
+            </p>
+        </div>
     </div>
 </footer>
 

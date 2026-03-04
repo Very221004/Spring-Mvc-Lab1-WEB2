@@ -1,7 +1,78 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head><title>Test</title></head>
-<body>
-<h1 th:text="${message}">Message</h1>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test - Spring MVC Lab</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+
+<div th:replace="~{fragments/layout :: navbar}"></div>
+
+<main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="max-w-2xl mx-auto">
+        <!-- Card Test -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+            <!-- Header dengan gradient -->
+            <div class="bg-gradient-to-r from-gray-700 to-gray-900 px-6 py-8">
+                <h1 class="text-3xl font-bold text-white text-center" th:text="${message}">Hello, World!</h1>
+            </div>
+
+            <!-- Konten -->
+            <div class="p-8">
+                <!-- Ikon Test -->
+                <div class="flex justify-center mb-6">
+                    <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center">
+                        <svg class="w-10 h-10 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Informasi Test -->
+                <div class="text-center mb-8">
+                    <p class="text-gray-600">
+                        Ini adalah halaman test sederhana untuk memverifikasi bahwa aplikasi berjalan dengan baik.
+                    </p>
+                    <p class="text-sm text-gray-500 mt-2">
+                        Waktu akses: <span th:text="${#dates.createNow()}">2026-03-04</span>
+                    </p>
+                </div>
+
+                <!-- Tombol Navigasi -->
+                <div class="flex justify-center">
+                    <a th:href="@{/}"
+                       class="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                        </svg>
+                        Kembali ke Home
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Status Card -->
+        <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div class="bg-green-50 rounded-lg p-4 text-center border border-green-100">
+                <div class="text-green-600 font-semibold">Status</div>
+                <div class="text-sm text-gray-600">Aktif</div>
+            </div>
+            <div class="bg-blue-50 rounded-lg p-4 text-center border border-blue-100">
+                <div class="text-blue-600 font-semibold">Mode</div>
+                <div class="text-sm text-gray-600">Development</div>
+            </div>
+            <div class="bg-purple-50 rounded-lg p-4 text-center border border-purple-100">
+                <div class="text-purple-600 font-semibold">Response</div>
+                <div class="text-sm text-gray-600" th:text="${message}">OK</div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<div th:replace="~{fragments/layout :: footer}"></div>
+
 </body>
 </html>
